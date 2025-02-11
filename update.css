@@ -1,0 +1,192 @@
+/* 📌 Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('https://plus.unsplash.com/premium_photo-1686090448301-4c453ee74718?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+  background-size: cover;
+  color: orange;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+/* 📌 Logo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px; /* Adjust size */
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  z-index: 10;
+}
+
+/* 📌 Main Container - Slide-in Effect */
+.container {
+  max-width: 800px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  backdrop-filter: blur(8px);
+
+  /* Initial position (off-screen) */
+  transform: translateX(100vw);
+  opacity: 0;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+/* 📌 Slide-in Keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 📌 Hover Effect */
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Heading */
+h1 {
+  color: orange;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 📌 Seats Left */
+p {
+  font-size: 20px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 20px;
+}
+
+/* 📌 Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(255, 248, 240, 0.95);
+  padding: 18px;
+  border-radius: 8px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid orange;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #ff6347; /* Change to tomato red */
+  outline: none;
+}
+
+/* 📌 Reserve Table Button */
+button {
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 📌 Button Hover Effect */
+button:hover {
+  background-color: #ff6347; /* Tomato red */
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
+}
+
+/* 📌 Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background-color: rgba(255, 248, 240, 0.95);
+  border-radius: 10px;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid orange;
+  text-align: center;
+  font-size: 16px;
+}
+
+th {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+td {
+  background-color: #fffbf0;
+  color: orange;
+}
+
+/* 📌 Buttons inside Table */
+td button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+td button:hover {
+  background-color: #b22222; /* Dark red */
+  transform: scale(1.1);
+}
+
+/* 📌 Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 90px;
+    top: 10px;
+    left: 10px;
+  }
+}
